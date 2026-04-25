@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PULPO - Café Cultural</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-hueso: #f5f2eb; 
+            --color-texto: #1a1a1a;
+        }
+
+        body {
+            background-color: var(--color-hueso);
+            color: var(--color-texto);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 600px;
+        }
+
+        .logo {
+            width: 130px; 
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Special+Elite', cursive;
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 3px;
+        }
+
+        .slogan {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .manifiesto {
+            max-width: 500px;
+            text-align: center;
+            padding: 30px 25px;
+            border-top: 1px solid rgba(0,0,0,0.15);
+            border-bottom: 1px solid rgba(0,0,0,0.15);
+            margin: 20px;
+        }
+
+        .agenda {
+            padding: 40px 20px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .agenda h2 {
+            font-family: 'Special+Elite', cursive;
+            text-align: center;
+            text-decoration: underline;
+            margin-bottom: 30px;
+        }
+
+        .grilla {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .item-agenda {
+            border: 1px solid var(--color-texto);
+            padding: 15px;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .item-agenda strong {
+            display: block;
+            font-family: 'Special+Elite', cursive;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 8px;
+        }
+
+        .menu-seccion {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.95rem;
+            background: rgba(0,0,0,0.03);
+            width: 100%;
+        }
+
+        footer {
+            padding: 60px 20px;
+            font-size: 0.85rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        /* Estilo fanzine: un poco de rotación aleatoria */
+        .item-agenda:nth-child(even) { transform: rotate(0.5deg); }
+        .item-agenda:nth-child(odd) { transform: rotate(-0.5deg); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="PULPO" class="logo">
+        <h1>PULPO</h1>
+        <p class="slogan">“Cuando con una sola mano no alcanza...”</p>
+    </header>
+
+    <section class="manifiesto">
+        <p>Somos un café cultural en San Fernando. Un brazo para el café, otro para los libros, uno para los chicos y el resto para que la cultura del barrio siga girando.</p>
+    </section>
+
+    <main class="agenda">
+        <h2>ESTA SEMANA</h2>
+        <div class="grilla">
+            <div class="item-agenda">
+                <strong>JUEVES 19HS</strong>
+                Taller de Escritura: "Relatos del Río".
+            </div>
+            <div class="item-agenda">
+                <strong>VIERNES 21HS</strong>
+                Cine Cult: Proyecciones en el patio.
+            </div>
+            <div class="item-agenda">
+                <strong>SÁBADO 11HS</strong>
+                Barro para Chicos (Traer ropa vieja).
+            </div>
+            <div class="item-agenda">
+                <strong>DOMINGO 18HS</strong>
+                Música Acústica & Poesía.
+            </div>
+        </div>
+    </main>
+
+    <section class="menu-seccion">
+        <p><strong>NUESTRO BÁSICO:</strong><br>
+        Café Filtrado • Tostado del Día • Buenos Vinos</p>
+    </section>
+
+    <footer>
+        <p>📍 San Fernando, Buenos Aires</p>
+        <p style="margin-top: 15px; font-style: italic;">...por suerte, acá tenemos ocho.</p>
+    </footer>
+
+</body>
+</html>
