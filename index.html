@@ -3,156 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PULPO - Café Cultural</title>
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300&display=swap" rel="stylesheet">
+    <title>PULPO Fanzine - San Fernando</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-hueso: #f5f2eb; 
-            --color-texto: #1a1a1a;
+            /* Colores de la imagen: Hueso moteado y Negro tinta */
+            --color-papel: #f3f0e8;
+            --color-tinta: #1a1a1a;
         }
 
         body {
-            background-color: var(--color-hueso);
-            color: var(--color-texto);
-            font-family: 'Inter', sans-serif;
+            /* Textura moteada del papel directamente con CSS */
+            background-color: var(--color-papel);
+            background-image: radial-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            
+            color: var(--color-tinta);
+            font-family: 'Cormorant Garamond', serif; /* Fina y elegante */
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.4;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
+        /* Contenedor principal que imita la tablet */
+        .pantalla-fanzine {
+            width: 90%;
+            max-width: 600px; /* Tamaño similar a una tablet */
+            margin-top: 50px;
+            padding: 40px;
+            border: 2px solid var(--color-tinta); /* Borde de la pantalla */
+            border-radius: 10px;
+            background-color: var(--color-papel);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
         header {
             text-align: center;
-            padding: 50px 20px;
-            max-width: 600px;
+            margin-bottom: 40px;
         }
 
         .logo {
-            width: 130px; 
-            margin-bottom: 15px;
+            width: 100px;
+            margin-bottom: 20px;
         }
 
-        h1 {
+        .titulo-pulpo {
             font-family: 'Special+Elite', cursive;
             font-size: 2.2rem;
             margin: 0;
-            letter-spacing: 3px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .slogan {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-top: 10px;
-            opacity: 0.9;
+        nav.menu {
+            display: flex;
+            justify-content: space-around;
+            max-width: 80%;
+            margin: 20px auto 0;
+            font-family: 'Special+Elite', cursive;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
 
-        .manifiesto {
-            max-width: 500px;
-            text-align: center;
-            padding: 30px 25px;
-            border-top: 1px solid rgba(0,0,0,0.15);
-            border-bottom: 1px solid rgba(0,0,0,0.15);
-            margin: 20px;
+        section.agenda-semana {
+            margin-bottom: 40px;
         }
 
-        .agenda {
-            padding: 40px 20px;
-            width: 90%;
-            max-width: 800px;
-        }
-
-        .agenda h2 {
+        .titulo-esta-semana {
             font-family: 'Special+Elite', cursive;
             text-align: center;
-            text-decoration: underline;
+            font-size: 1.5rem;
             margin-bottom: 30px;
+            text-transform: uppercase;
         }
 
-        .grilla {
+        .grilla-eventos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
-        .item-agenda {
-            border: 1px solid var(--color-texto);
-            padding: 15px;
-            background: rgba(255,255,255,0.3);
+        /* --- AQUÍ ESTÁ EL TRUCO DE LOS MARCOS DIBUJADOS --- */
+        .evento {
+            background-color: var(--color-papel);
+            padding: 20px;
+            position: relative;
+            z-index: 1;
         }
 
-        .item-agenda strong {
-            display: block;
+        /* Esto crea el borde irregular dibujado a mano */
+        .evento::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 1px solid var(--color-tinta);
+            z-index: -1;
+            /* Estos valores crean el efecto de línea irregular */
+            border-radius: 4px;
+            transform: skewX(-0.5deg) skewY(0.5deg);
+        }
+
+        /* Añadimos iconos CSS simples para barro y música */
+        .icono-evento {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .barro::before { content: "🖐️"; }
+        .musica::before { content: "🎸"; }
+
+        .evento strong {
             font-family: 'Special+Elite', cursive;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 8px;
-        }
-
-        .menu-seccion {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.95rem;
-            background: rgba(0,0,0,0.03);
-            width: 100%;
+            display: block;
+            margin-bottom: 5px;
         }
 
         footer {
-            padding: 60px 20px;
-            font-size: 0.85rem;
             text-align: center;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.2);
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Estilo fanzine: un poco de rotación aleatoria */
-        .item-agenda:nth-child(even) { transform: rotate(0.5deg); }
-        .item-agenda:nth-child(odd) { transform: rotate(-0.5deg); }
-
+        @media (max-width: 600px) {
+            .pantalla-fanzine {
+                width: 95%;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            .titulo-pulpo { font-size: 1.8rem; }
+            nav.menu { flex-direction: column; gap: 5px; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="PULPO" class="logo">
-        <h1>PULPO</h1>
-        <p class="slogan">“Cuando con una sola mano no alcanza...”</p>
-    </header>
+    <div class="pantalla-fanzine">
+        <header>
+            <img src="logo.png" alt="PULPO Fanzine" class="logo">
+            <h1 class="titulo-pulpo">PULPO</h1>
+            <nav class="menu">
+                <span>CAFÉ ☕</span>
+                <span>CULTURA 📖</span>
+                <span>SAN FERNANDO 〰️</span>
+            </nav>
+        </header>
 
-    <section class="manifiesto">
-        <p>Somos un café cultural en San Fernando. Un brazo para el café, otro para los libros, uno para los chicos y el resto para que la cultura del barrio siga girando.</p>
-    </section>
+        <section class="agenda-semana">
+            <h2 class="titulo-esta-semana">ESTA SEMANA</h2>
+            <div class="grilla-eventos">
+                <div class="evento">
+                    <span class="icono-evento barro"></span>
+                    <strong>SÁBADO 11hs:</strong>
+                    <p>Taller de Barro para Chicos (Traer ropa para ensuciar)</p>
+                </div>
+                <div class="evento">
+                    <span class="icono-evento musica"></span>
+                    <strong>DOMINGO 18hs:</strong>
+                    <p>Poesía y Música Acústica al Atardecer.</p>
+                </div>
+            </div>
+        </section>
 
-    <main class="agenda">
-        <h2>ESTA SEMANA</h2>
-        <div class="grilla">
-            <div class="item-agenda">
-                <strong>JUEVES 19HS</strong>
-                Taller de Escritura: "Relatos del Río".
-            </div>
-            <div class="item-agenda">
-                <strong>VIERNES 21HS</strong>
-                Cine Cult: Proyecciones en el patio.
-            </div>
-            <div class="item-agenda">
-                <strong>SÁBADO 11HS</strong>
-                Barro para Chicos (Traer ropa vieja).
-            </div>
-            <div class="item-agenda">
-                <strong>DOMINGO 18HS</strong>
-                Música Acústica & Poesía.
-            </div>
-        </div>
-    </main>
-
-    <section class="menu-seccion">
-        <p><strong>NUESTRO BÁSICO:</strong><br>
-        Café Filtrado • Tostado del Día • Buenos Vinos</p>
-    </section>
-
-    <footer>
-        <p>📍 San Fernando, Buenos Aires</p>
-        <p style="margin-top: 15px; font-style: italic;">...por suerte, acá tenemos ocho.</p>
-    </footer>
+        <footer>
+            <p>NUESTRO BÁSICO:<br>
+            <span style="font-family: 'Special+Elite', cursive; font-size: 0.8rem;">Café Filtrado y Tostado Clásico • Pastelería casera</span></p>
+            <p style="opacity: 0.6; margin-top: 20px;">📍 San Fernando, Buenos Aires</p>
+        </footer>
+    </div>
 
 </body>
 </html>
