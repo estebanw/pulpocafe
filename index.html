@@ -4,101 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulpo - Café y Cultura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@400;700&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f2efe6; /* Color crema del fondo */
-            background-image: url('https://www.transparenttextures.com/patterns/felt.png'); /* Textura sutil */
-            font-family: 'Open Sans', sans-serif;
+            /* Color crema/papel del original */
+            background-color: #edeae0; 
+            /* Textura de papel sutil */
+            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             color: #1a1a1a;
-            text-align: center;
+            margin: 0;
         }
 
-        .logo-container { margin-bottom: 20px; }
-        .logo-img { width: 100px; height: auto; }
-        
-        h1 { 
-            font-family: 'Open Sans', sans-serif;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin: 10px 0;
+        .logo-pulpo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
         }
 
-        .categories {
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            margin: 0 0 30px 0;
+            font-weight: 700;
+        }
+
+        .nav {
+            font-size: 0.8rem;
+            font-weight: 700;
             display: flex;
-            gap: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
+            gap: 15px;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .nav span { border-bottom: 2px solid transparent; }
+        /* Efecto de la rayita debajo de San Fernando */
+        .san-fernando { border-bottom: 2px solid #333 !important; padding-bottom: 2px; }
+
+        .titulo-semana {
+            font-size: 2.2rem;
+            font-weight: 900;
             margin-bottom: 40px;
+            letter-spacing: 2px;
         }
 
-        .section-title {
-            font-size: 2rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 30px;
-        }
-
-        .events-grid {
+        .contenedor-eventos {
             display: flex;
-            gap: 20px;
-            max-width: 600px;
+            gap: 30px;
+            max-width: 800px;
+            width: 100%;
+            justify-content: center;
         }
 
-        .event-card {
-            border: 2px solid #000;
-            padding: 20px;
-            border-radius: 5px;
-            flex: 1;
-            background: rgba(255, 255, 255, 0.3);
-            /* Este efecto simula el dibujo a mano */
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #1a1a1a;
+            padding: 30px 20px;
+            width: 280px;
+            text-align: center;
+            /* Bordes irregulares para efecto dibujo a mano */
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-            position: relative;
+            box-shadow: 2px 5px 10px rgba(0,0,0,0.05);
         }
 
-        .event-card h3 { font-family: 'Indie+Flower', cursive; margin: 0; }
-        
-        .footer-note {
-            margin-top: 40px;
+        .card p {
+            font-weight: 700;
+            margin: 0 0 15px 0;
             font-size: 1.1rem;
         }
 
-        .footer-note span { display: block; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+        .card h3 {
+            font-family: 'Gochi Hand', cursive;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer .label {
+            font-weight: 800;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .footer .texto {
+            font-size: 1.3rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Responsive para móviles */
+        @media (max-width: 600px) {
+            .contenedor-eventos { flex-direction: column; align-items: center; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="logo-container">
-        <img src="logo-pulpo.png" alt="Pulpo" class="logo-img">
-        <h1>PULPO</h1>
-    </div>
+    <img src="logo-pulpo.png" alt="Logo Pulpo" class="logo-pulpo">
+    <h1>PULPO</h1>
 
-    <div class="categories">
+    <div class="nav">
         <span>CAFÉ ☕</span>
         <span>CULTURA 📖</span>
-        <span>SAN FERNANDO 〰️</span>
+        <span class="san-fernando">SAN FERNANDO</span>
     </div>
 
-    <div class="section-title">ESTA SEMANA</div>
+    <div class="titulo-semana">ESTA SEMANA</div>
 
-    <div class="events-grid">
-        <div class="event-card">
-            <p><strong>SÁBADO 11hs:</strong></p>
+    <div class="contenedor-eventos">
+        <div class="card">
+            <p>SÁBADO 11hs:</p>
             <h3>Taller de Barro para Chicos 🖐️</h3>
         </div>
-        <div class="event-card">
-            <p><strong>DOMINGO 18hs:</strong></p>
+
+        <div class="card">
+            <p>DOMINGO 18hs:</p>
             <h3>Poesía y Música Acústica 🎸</h3>
         </div>
     </div>
 
-    <div class="footer-note">
-        <span>NUESTRO BÁSICO:</span>
-        Café Filtrado y Tostado Clásico
+    <div class="footer">
+        <span class="label">NUESTRO BÁSICO:</span>
+        <span class="texto">Café Filtrado y Tostado Clásico</span>
     </div>
 
 </body>
