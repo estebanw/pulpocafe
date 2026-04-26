@@ -3,82 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pulpo - Café y Cultura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Pulpo - Café, Cultura, San Fernando</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* 1. Reset básico para que no haya márgenes extraños */
+        * { margin: 0; padding: 0; box-shadow: border-box; }
+
+        /* 2. Estilos para el fondo de la web */
         body {
-            /* 1. Usamos exactamente el color crema texturizado de tu referencia */
-            background-color: #f2efe6; 
+            /* Un color crema similar al de tu papel, con textura sutil */
+            background-color: #f2efe6;
             background-image: url('https://www.transparenttextures.com/patterns/p6.png'); /* Textura de papel sutil */
+            font-family: 'Open Sans', sans-serif; /* Usamos una fuente nítida */
+            color: #1a1a1a;
+            /* Estos estilos centran todo en la pantalla */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: flex-start; /* Alinea al principio */
+            justify-content: flex-start; /* Alinea hacia arriba, luego damos padding */
             min-height: 100vh;
-            margin: 0;
             padding: 20px;
         }
 
-        .contenedor-principal {
-            /* Este contenedor engloba todo para asegurar el centrado */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* 3. Contenedor para la imagen */
+        .contenedor-diseño {
             width: 100%;
-            max-width: 600px; /* Ancho máximo para que no se estire demasiado */
+            max-width: 600px; /* Ancho máximo para que no se estire demasiado en escritorio */
+            margin: 0 auto; /* Centrado horizontal adicional */
+            /* Pequeña sombra para dar efecto de papel sobre la mesa */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            border-radius: 4px; /* Bordes ligeramente suavizados */
+            overflow: hidden; /* Mantiene la sombra nítida */
         }
 
-        .imagen-referencia {
-            /* 2. Mostramos la imagen de referencia EXACTA */
+        /* 4. Estilos para la imagen real (el diseño) */
+        .imagen-diseño {
             width: 100%;
             height: auto;
-            display: block;
-            /* Pequeña sombra para dar efecto de papel sobre la mesa */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
-            border-radius: 2px; /* Bordes muy ligeramente suavizados */
+            display: block; /* Elimina espacios vacíos debajo */
+            /* Forzar nitidez en imágenes que se redimensionan */
+            image-rendering: optimizeQuality; 
         }
 
-        .footer-menu {
-            /* 3. Estilos para el texto inferior (Café Filtrado...) */
+        /* 5. Contenedor para el texto básico inferior, si lo necesitas */
+        .menu-inferior {
             margin-top: 20px;
             text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            color: #1a1a1a;
             width: 100%;
+            padding: 0 10px;
         }
 
-        .footer-label {
-            display: block;
-            font-weight: 700;
-            font-size: 0.75rem;
+        .menu-inferior span {
+            font-size: 0.8rem;
             text-transform: uppercase;
+            font-weight: 700;
             letter-spacing: 2px;
+            display: block;
             margin-bottom: 5px;
         }
 
-        .footer-texto {
-            display: block;
+        .menu-inferior p {
             font-size: 1.1rem;
             font-weight: 400;
         }
 
-        /* Responsive para móviles */
-        @media (max-width: 600px) {
+        /* 6. Optimización para móviles pequeños */
+        @media (max-width: 400px) {
             body { padding: 10px; }
-            .imagen-referencia { width: 100%; }
-            .footer-texto { font-size: 1rem; }
+            .contenedor-diseño { max-width: 95%; }
+            .menu-inferior p { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="contenedor-principal">
-        <img src="pulpo-referencia.png" alt="Diseño Pulpo Café Cultura" class="imagen-referencia">
+    <div class="contenedor-diseño">
+        <img src="pulpo-diseño.png" alt="Pulpo - Café, Cultura, San Fernando - Diseño Original" class="imagen-diseño">
+    </div>
 
-        <div class="footer-menu">
-            <span class="footer-label">NUESTRO BÁSICO:</span>
-            <span class="footer-texto">Café Filtrado y Tostado Clásico</span>
-        </div>
+    <div class="menu-inferior">
+        <span>NUESTRO BÁSICO:</span>
+        <p>Café Filtrado y Tostado Clásico</p>
     </div>
 
 </body>
