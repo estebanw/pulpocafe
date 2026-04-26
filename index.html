@@ -1,1 +1,105 @@
-<!DOCTYPE html> <html lang="es"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Pulpo Café Cultural</title> <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet"> <style> body { margin: 0; font-family: 'Fredoka', sans-serif; background-color: #fafafa; color: #222; line-height: 1.6; } header { text-align: center; padding: 40px 20px; background-color: #ffffff; border-bottom: 2px solid #eee; } header img { max-width: 120px; height: auto; } header h1 { font-size: 2.5em; margin: 10px 0 0; } nav { background-color: #f2f2f2; text-align: center; padding: 10px 0; } nav a { color: #333; text-decoration: none; margin: 0 15px; font-weight: 500; } nav a:hover { color: #ff6f61; } section { max-width: 900px; margin: 40px auto; padding: 0 20px; } h2 { color: #ff6f61; margin-bottom: 10px; } ul { list-style: none; padding: 0; } ul li::before { content: "• "; color: #ff6f61; } footer { text-align: center; padding: 30px 20px; background-color: #f2f2f2; font-size: 0.9em; color: #555; } </style> </head> <body> <header> <img src="logo-pulpo.png" alt="Logo Pulpo Café Cultural"> <h1>Pulpo Café Cultural</h1> </header> <nav> <a href="#inicio">Inicio</a> <a href="#sobre">Sobre</a> <a href="#cafe">Café</a> <a href="#cultura">Cultura</a> <a href="#eventos">Eventos</a> <a href="#galeria">Galería</a> <a href="#contacto">Contacto</a> </nav> <section id="inicio"> <h2>Inicio</h2> <p>Bienvenido a <strong>Pulpo</strong>, un espacio cultural en el corazón de San Fernando donde el arte, la música y el café se encuentran. Un lugar para compartir ideas, disfrutar de buena compañía y descubrir nuevas expresiones creativas.</p> <p><strong>Horario:</strong> Martes a domingo, de 9:00 a 22:00<br> <strong>Dirección:</strong> Av. Libertador 1234, San Fernando, Buenos Aires<br> <strong>Contacto:</strong> hola@pulpo.com.ar | +54 11 5555 5555</p> </section> <section id="sobre"> <h2>Sobre Pulpo</h2> <p>Pulpo nació con la idea de crear un punto de encuentro para artistas, vecinos y amantes del café. Aquí se combinan exposiciones, talleres, música en vivo y una carta pensada para acompañar cada momento del día.</p> <p><strong>Misión:</strong> Fomentar la cultura local y ofrecer un espacio abierto a la creatividad.<br> <strong>Visión:</strong> Ser un referente cultural en la zona norte del Gran Buenos Aires.</p> </section> <section id="cafe"> <h2>Café</h2> <ul> <li>Espresso clásico</li> <li>Latte con arte</li> <li>Tostadas con palta y huevo</li> <li>Budín casero de limón</li> <li>Té en hebras y jugos naturales</li> </ul> </section> <section id="cultura"> <h2>Cultura</h2> <ul> <li><strong>Música en vivo:</strong> artistas locales todos los viernes.</li> <li><strong>Exposiciones:</strong> muestras rotativas de arte visual.</li> <li><strong>Talleres:</strong> fotografía, escritura, cerámica y más.</li> <li><strong>Charlas y lecturas:</strong> encuentros con autores y pensadores contemporáneos.</li> </ul> </section> <section id="eventos"> <h2>Eventos</h2> <p>Reservas para eventos privados, presentaciones o reuniones culturales.</p> <p><strong>Espacio disponible:</strong> hasta 50 personas, con equipamiento de sonido y proyección.<br> <strong>Consultas:</strong> eventos@pulpo.com.ar</p> </section> <section id="galeria"> <h2>Galería</h2> <p>(Espacio para imágenes del lugar, eventos y obras de arte. Se pueden usar fotos de stock o imágenes temporales hasta contar con material propio.)</p> </section> <section id="contacto"> <h2>Contacto</h2> <p><strong>Dirección:</strong> Av. Libertador 1234, San Fernando, Buenos Aires<br> <strong>Teléfono:</strong> +54 11 5555 5555<br> <strong>Correo:</strong> hola@pulpo.com.ar</p> <p><strong>Redes sociales:</strong><br> Instagram: @pulpo.cultural<br> Facebook: Pulpo Café Cultural</p> </section> <footer> © 2026 Pulpo Café Cultural. Todos los derechos reservados. </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulpo - Café y Cultura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f2efe6; /* Color crema del fondo */
+            background-image: url('https://www.transparenttextures.com/patterns/felt.png'); /* Textura sutil */
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+
+        .logo-container { margin-bottom: 20px; }
+        .logo-img { width: 100px; height: auto; }
+        
+        h1 { 
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        .categories {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 30px;
+        }
+
+        .events-grid {
+            display: flex;
+            gap: 20px;
+            max-width: 600px;
+        }
+
+        .event-card {
+            border: 2px solid #000;
+            padding: 20px;
+            border-radius: 5px;
+            flex: 1;
+            background: rgba(255, 255, 255, 0.3);
+            /* Este efecto simula el dibujo a mano */
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+            position: relative;
+        }
+
+        .event-card h3 { font-family: 'Indie+Flower', cursive; margin: 0; }
+        
+        .footer-note {
+            margin-top: 40px;
+            font-size: 1.1rem;
+        }
+
+        .footer-note span { display: block; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <img src="logo-pulpo.png" alt="Pulpo" class="logo-img">
+        <h1>PULPO</h1>
+    </div>
+
+    <div class="categories">
+        <span>CAFÉ ☕</span>
+        <span>CULTURA 📖</span>
+        <span>SAN FERNANDO 〰️</span>
+    </div>
+
+    <div class="section-title">ESTA SEMANA</div>
+
+    <div class="events-grid">
+        <div class="event-card">
+            <p><strong>SÁBADO 11hs:</strong></p>
+            <h3>Taller de Barro para Chicos 🖐️</h3>
+        </div>
+        <div class="event-card">
+            <p><strong>DOMINGO 18hs:</strong></p>
+            <h3>Poesía y Música Acústica 🎸</h3>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        <span>NUESTRO BÁSICO:</span>
+        Café Filtrado y Tostado Clásico
+    </div>
+
+</body>
+</html>
